@@ -8,9 +8,9 @@ namespace ShapeLibrary
 {
     public class Triangle : Shape
     {
-        public double A;
-        public double B;
-        public double C;
+        public readonly double A;
+        public readonly double B;
+        public readonly double C;
 
         public Triangle(double a, double b, double c) : base()
         {

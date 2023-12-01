@@ -8,7 +8,7 @@ namespace ShapeLibrary
 {
     public class Circle : Shape
     {
-        private double _radius;
+        public readonly double Radius;
 
         public Circle(double radius) : base()
         {
@@ -17,7 +17,7 @@ namespace ShapeLibrary
                 throw new ArgumentException("The radius is less than zero");
             }
 
-            this._radius = radius;
+            this.Radius = radius;
         }
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace ShapeLibrary
         /// <returns>double square</returns>
         public override double GetSquare()
         {
-            return Math.Round(Math.PI * Math.Pow(_radius, 2), 1);
+            return Math.Round(Math.PI * Math.Pow(Radius, 2), 1);
         }
     }
 }
