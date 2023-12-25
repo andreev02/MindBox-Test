@@ -19,29 +19,29 @@
 #### Решение:
 
 ```
-CREATE TABLE Products
+CREATE TABLE products
 (
-  Id INT PRIMARY KEY IDENTITY, 
-  Name VARCHAR(255) NOT NULL
+  id INT PRIMARY KEY IDENTITY, 
+  name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE Categories
+CREATE TABLE categories
 (
-  Id INT PRIMARY KEY IDENTITY,
-  Name VARCHAR(255) NOT NULL
-);
-```
-
-```
-CREATE TABLE Product_Categories
-(
-  Product_Id INT(11) NOT NULL,
-  Category_Id INT(11) NOT NULL
+  id INT PRIMARY KEY IDENTITY,
+  name VARCHAR(255) NOT NULL
 );
 ```
 
 ```
-SELECT Products.Name, Categories.Name FROM Products
-LEFT JOIN Product_Categories ON Products.Id = Product_Categories.Product_Id
-INNER JOIN Categories ON Categories.Id = Product_Categories.Category_Id;
+CREATE TABLE product_categories
+(
+  product_id INT(11) NOT NULL,
+  category_id INT(11) NOT NULL
+);
+```
+
+```
+SELECT products.name, categories.name FROM products
+LEFT JOIN product_categories ON Products.id = product_categories.product_id
+INNER JOIN categories ON categories.id = product_categories.category_id;
 ```
